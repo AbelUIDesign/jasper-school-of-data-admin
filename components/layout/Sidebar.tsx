@@ -15,7 +15,8 @@ import {
   Award, 
   GraduationCap, 
   Settings, 
-  ExternalLink 
+  ExternalLink,
+  Layers
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -35,6 +36,7 @@ const generalNav: NavItem[] = [
 ];
 
 const learningNav: NavItem[] = [
+  { name: 'Cohorts', href: '/cohorts', icon: Layers, badge: 4, badgeColor: 'stone' },
   { name: 'Classes', href: '/classes', icon: Video, badge: '2', badgeColor: 'stone' },
   { name: 'Instructors', href: '/instructors', icon: GraduationCap },
   { name: 'Assignments', href: '/assessments?tab=assignments', icon: FileText, badge: 18, badgeColor: 'stone' },

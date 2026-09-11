@@ -226,3 +226,41 @@ export interface AttentionItem {
   description: string;
 }
 
+export type CohortStatus = 'active' | 'enrolling' | 'upcoming' | 'completed';
+
+export interface Cohort {
+  id: string;
+  code: string; // e.g. "COH-2026-A"
+  name: string; // e.g. "Cohort 2026-A · Q1 Spring"
+  courseId: string;
+  courseTitle: string;
+  category: CourseCategory;
+  instructorId: string;
+  instructorName: string;
+  instructorAvatar: string;
+  instructorRole: string;
+  startDate: string;
+  endDate: string;
+  enrollmentDeadline: string;
+  status: CohortStatus;
+  seatsFilled: number;
+  maxSeats: number;
+  waitlistCount: number;
+  scheduleDays: string; // e.g. "Tue & Thu"
+  scheduleTimeWAT: string; // e.g. "6:00 PM – 8:00 PM WAT"
+  scheduleTimeBST: string; // e.g. "5:00 PM – 7:00 PM BST"
+  format: 'Live Online' | 'Hybrid' | 'Weekend Intensive';
+  zoomMeetingId?: string;
+  zoomRecurringUrl?: string;
+  communicationChannel?: {
+    platform: 'Slack' | 'Discord' | 'WhatsApp';
+    channelName: string;
+    url: string;
+  };
+  completionRate?: number; // e.g. 92%
+  averageAttendance?: number; // e.g. 88%
+  activeWeek?: number; // e.g. Week 6 of 12
+  totalWeeks?: number;
+}
+
+
